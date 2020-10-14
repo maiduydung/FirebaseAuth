@@ -1,3 +1,20 @@
+//listen for authentication status, and keep track of it
+//logged in / logged out
+auth.onAuthStateChanged(user =>{
+  //check the console
+  console.log("Auth check\n",user);
+
+  if(user){
+    console.log('User logged in\n', user.email);
+  }
+  else{
+    console.log('User logged out\n');
+  }
+
+});
+
+
+
 //sign up
 //reference to sign up modal in index.html
 const signupForm = document.querySelector('#signup-form');
@@ -28,9 +45,7 @@ signupForm.addEventListener('submit', (e)=> {
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
-  auth.signOut().then(() => {
-    console.log('user signed out');
-  })
+  auth.signOut()
 });
 
 
