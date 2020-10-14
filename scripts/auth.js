@@ -17,7 +17,20 @@ signupForm.addEventListener('submit', (e)=> {
     // we have to wait for it to finish
     auth.createUserWithEmailAndPassword(email, password).then(cred =>{
         console.log(cred);
+        const modal = document.querySelector('#model-signup');
+        //materialize only
+        M.Modal.getInstance(modal).close();
+        signupForm.reset();
+        signupForm.close();
     });
-
-
 })
+
+
+// logout
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  auth.signOut().then(() => {
+    console.log('user signed out');
+  })
+});
