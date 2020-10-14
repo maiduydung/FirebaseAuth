@@ -16,14 +16,12 @@ signupForm.addEventListener('submit', (e)=> {
     // takes some time to complete
     // we have to wait for it to finish
     auth.createUserWithEmailAndPassword(email, password).then(cred =>{
-        console.log(cred);
-        const modal = document.querySelector('#model-signup');
-        //materialize only
-        M.Modal.getInstance(modal).close();
-        signupForm.reset();
-        signupForm.close();
+    // close the signup modal & reset form
+    const modal = document.querySelector('#modal-signup');
+    M.Modal.getInstance(modal).close();
+    signupForm.reset()
     });
-})
+});
 
 
 // logout
