@@ -32,3 +32,22 @@ logout.addEventListener('click', (e) => {
     console.log('user signed out');
   })
 });
+
+
+//login
+const loginForm = document.querySelector('#login-form');
+loginForm.addEventListener('submit', (e) =>{
+    e.preventDefault();
+
+    //let user info
+    const email = loginForm['login-email'].value;
+    const password = loginForm['login-password'].value;
+
+    auth.signInWithEmailAndPassword(email,password).then((cred)=>{
+        console.log("user logged in\n",cred.user);
+        //close and reset log in modal
+        const modal = document.querySelector('#modal-login');
+        M.Modal.getInstance(modal).close();
+        loginForm.reset()
+    });
+});
