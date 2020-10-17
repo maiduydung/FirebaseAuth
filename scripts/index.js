@@ -3,13 +3,23 @@
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 
+const accountDetails = document.querySelector('.account-details');
+
 const setupUI = (user)=>{
   if(user){
+    //account info
+    const html =`
+      <div>Logged in as ${user.email}</div>
+    `;
+    accountDetails.innerHTML = html;
     //toggle UI
     //display the login menu as blocks. hide logout elements
     loggedInLinks.forEach(item => item.style.display = 'block');
     loggedOutLinks.forEach(item => item.style.display = 'none')
   }else{
+    //hide acc info
+    accountDetails.innerHTML = '';
+
     loggedInLinks.forEach(item => item.style.display = 'none');
     loggedOutLinks.forEach(item => item.style.display = 'block')
   }
