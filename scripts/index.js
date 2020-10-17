@@ -6,6 +6,7 @@ const loggedInLinks = document.querySelectorAll('.logged-in');
 const setupUI = (user)=>{
   if(user){
     //toggle UI
+    //display the login menu as blocks. hide logout elements
     loggedInLinks.forEach(item => item.style.display = 'block');
     loggedOutLinks.forEach(item => item.style.display = 'none')
   }else{
