@@ -1,5 +1,4 @@
 
-
 //listen for authentication status, and keep track of it
 //logged in / logged out
 auth.onAuthStateChanged(user =>{
@@ -21,6 +20,24 @@ auth.onAuthStateChanged(user =>{
     setupUI();
   }
 
+});
+
+
+//create new post
+const createForm = document.querySelector('#create-form');
+createForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  db.collection('posts').add({
+    title: createForm['title'].value,
+    content: createForm['content'].value,
+  }).then(()=>{
+    //close and reset
+    const modal = document.querySelector('#modal-create');
+    M.Modal.getInstance(modal).close();
+    createForm.reset()
+  }).catch(err => {
+    console.log(err.message);
+  });
 });
 
 
