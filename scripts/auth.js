@@ -7,6 +7,7 @@ auth.onAuthStateChanged(user =>{
   console.log("Auth check\n",user);
 
   if(user){
+    setupUI(user);
     console.log('User logged in\n', user.email);
     // get posts
     // db is a firestore instance declared in index.html
@@ -17,6 +18,7 @@ auth.onAuthStateChanged(user =>{
     console.log('User logged out\n');
     //if user not logged in, then return empty 
     setupPost([])
+    setupUI();
   }
 
 });

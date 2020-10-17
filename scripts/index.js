@@ -1,3 +1,20 @@
+
+//conditional UI, display only if the user logged in or not
+const loggedOutLinks = document.querySelectorAll('.logged-out');
+const loggedInLinks = document.querySelectorAll('.logged-in');
+
+const setupUI = (user)=>{
+  if(user){
+    //toggle UI
+    loggedInLinks.forEach(item => item.style.display = 'block');
+    loggedOutLinks.forEach(item => item.style.display = 'none')
+  }else{
+    loggedInLinks.forEach(item => item.style.display = 'none');
+    loggedOutLinks.forEach(item => item.style.display = 'block')
+  }
+};
+
+
 //reference to the "posts" class in index.html
 const postList = document.querySelector('.posts');
 
