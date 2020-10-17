@@ -10,7 +10,7 @@ auth.onAuthStateChanged(user =>{
     console.log('User logged in\n', user.email);
     // get posts
     // db is a firestore instance declared in index.html
-    db.collection('posts').get().then((snapshot)=>{
+    db.collection('posts').onSnapshot((snapshot)=>{
       setupPost(snapshot.docs)
     });
   }  else{
