@@ -1,8 +1,3 @@
-// get posts
-// db is a firestore instance declared in index.html
-db.collection('posts').get().then((snapshot)=>{
-  setupPost(snapshot.docs)
-});
 
 
 //listen for authentication status, and keep track of it
@@ -13,9 +8,15 @@ auth.onAuthStateChanged(user =>{
 
   if(user){
     console.log('User logged in\n', user.email);
-  }
-  else{
+    // get posts
+    // db is a firestore instance declared in index.html
+    db.collection('posts').get().then((snapshot)=>{
+      setupPost(snapshot.docs)
+    });
+  }  else{
     console.log('User logged out\n');
+    //if user not logged in, then return empty 
+    setupPost([])
   }
 
 });
