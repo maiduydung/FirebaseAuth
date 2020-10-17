@@ -12,6 +12,8 @@ auth.onAuthStateChanged(user =>{
     db.collection('posts').onSnapshot((snapshot)=>{
       setupPost(snapshot.docs);
       setupUI(user);
+    }, err =>{
+      console.log(err.message)
     });
   }  else{
     console.log('User logged out\n');
@@ -60,10 +62,14 @@ signupForm.addEventListener('submit', (e)=> {
     // takes some time to complete
     // we have to wait for it to finish
     auth.createUserWithEmailAndPassword(email, password).then(cred =>{
-    // close the signup modal & reset form
-    const modal = document.querySelector('#modal-signup');
-    M.Modal.getInstance(modal).close();
-    signupForm.reset()
+      return db.collection('users').doc(cred.user.uid).set({
+        bio: signupForm['signup-bio'].value
+      });
+    }).then(()=>{
+      // close the signup modal & reset form
+      const modal = document.querySelector('#modal-signup');
+      M.Modal.getInstance(modal).close();
+      signupForm.reset();
     });
 });
 

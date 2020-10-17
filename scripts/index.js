@@ -7,11 +7,17 @@ const accountDetails = document.querySelector('.account-details');
 
 const setupUI = (user)=>{
   if(user){
-    //account info
-    const html =`
-      <div>Logged in as ${user.email}</div>
-    `;
-    accountDetails.innerHTML = html;
+
+    db.collection('users').doc(user.uid).get().then(doc =>{
+      //account info
+      const html =`
+        <div>Logged in as ${user.email}</div>
+        <div>${doc.data().bio}</div>
+      `;
+      accountDetails.innerHTML = html;
+    });
+
+
     //toggle UI
     //display the login menu as blocks. hide logout elements
     loggedInLinks.forEach(item => item.style.display = 'block');
