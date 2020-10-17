@@ -1,3 +1,10 @@
+// get posts
+// db is a firestore instance declared in index.html
+db.collection('posts').get().then((snapshot)=>{
+  setupPost(snapshot.docs)
+});
+
+
 //listen for authentication status, and keep track of it
 //logged in / logged out
 auth.onAuthStateChanged(user =>{
@@ -66,3 +73,5 @@ loginForm.addEventListener('submit', (e) =>{
         loginForm.reset()
     });
 });
+
+
