@@ -3,7 +3,7 @@ const postList = document.querySelector('.posts');
 
 //seting up posts
 const setupPost = (data) =>{
-
+  if (data.length){
   let html ='';
   data.forEach(doc => {
     //remember to use data() method not ".data" attribute
@@ -18,9 +18,11 @@ const setupPost = (data) =>{
     `;
     html = html + li;
   });
-
   postList.innerHTML = html;
-
+  }
+  else{
+    postList.innerHTML = '<h4 class="center-align">Log in to see posts</h4>';
+  }
 }
 
 
