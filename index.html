@@ -35,18 +35,23 @@
 
     <!-- Bottom post bar -->
     <div class="navbar">
-        <!-- <a href="#home" class="active">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a> -->
+        <!-- <a href="#" class="white-text modal-trigger" data-target="modal-create">Create post</a> -->
+        <!-- <div class="row">
+          <div class="col offset-s4" id="postbar">
+            <ul>
+              <li>            <a href="#" class="white-text modal-trigger" data-target="modal-create">Create post</a></li>
+            </ul>
+          </div>
+        </div> -->
 
-        <div class="row">
-            <div class="input-field">
-                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
-            </div>
-        </div>
       </div>
 
+
+      <div class="fixed-action-btn ">
+        <a class="btn-floating btn-large  modal-trigger  yellow darken-3" data-target="modal-create">
+          <i class="large material-icons" onclick="print_log()">mode_edit</i>
+        </a>
+      </div>
 
     <!-- USER POST -->
     <!-- ---------------------------------------------------------------------------------------------- -->
@@ -115,6 +120,19 @@
 
     <!-- ---------------------------------------------------------------------------------------------- -->
 
+
+  <!-- CREATE POST MODAL -->
+  <div id="modal-create" class="modal">
+    <div class="modal-content">
+      <form id="create-form">
+        <div class="input-field">
+          <textarea id="content" class="materialize-textarea" required></textarea>
+          <label for="content">Content</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Create</button>
+      </form>
+    </div>
+  </div>
 
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
