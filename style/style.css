@@ -1,6 +1,47 @@
-.newfeed_aircon{
-    background-image: url("");
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-size: cover;
-};
+.newsfeed_aircon{
+    margin-bottom: 15px
+}
+
+
+
+.descending_btn{
+    background-color: #FFC016 !important;
+    border: none;
+    color: white;
+    margin-left: 60pt;
+    padding: 5px 25px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+}
+
+.like_btn{
+    background-color: #DFDFDF !important;
+    border: none;
+    color: white;
+    margin-right: 35pt;
+    padding: 5px 25px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+}
+
+.card{
+    height: 220px;
+}
+
+
+.card-content{
+
+    overflow: hidden;
+}
+
+.card-title{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+

@@ -3,21 +3,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electric</title>
+    <!-- material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- custom css -->
     <link rel="stylesheet" href="./style/style.css">
       <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
+
+<style>
+    body{
+        background-color: #F6F6F6;
+    }
+</style>
+
 <body>
     <div class="row">
         <div class="col s12 no-padding">
-            <img class="responsive-img newsfeed_aircon " src="./img/air_con/drawable-xxxhdpi/image.jpg">
+            <img class="responsive-img newsfeed_aircon" src="./img/air_con/drawable-xxxhdpi/air2.png">
         </div>
-        <div class="col s12 no-padding">
-            ASDFASDF
+        <div class="col s6">
+            <div class="container">
+                <button type="button" class="descending_btn" onclick="">時系列</button>
+            </div>
         </div>
+        <div class="col s6">
+            <button type="button" class="like_btn" id="like_arr_btn"  onclick="">いいね数</button>
+        </div>
+
     </div>
 
+
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="card-title">
+            <div class="row">
+                <div class="col s2"><img class="circle responsive-img" src="./img/avatar/20200909-182013413813_7098/drawable-hdpi/20200909-182013413813_7098.png" alt=""></div>
+            </div>
+        </div>
+          <div class="row valign-wrapper">
+            <div class="col">
+              <span class="black-text">
+                This is a square image. Add the "circle" class to it to make it appear circular.
+              </span>
+            </div>
+          </div>
+          <div class="card-action right-align">
+            <a href="#"><i class="material-icons black-text">favorite_border</i></a>
+          </div>
+        </div>
+      </div>
+
+    
 
 
 
@@ -57,7 +94,7 @@
     // db.settings({ timestampsInSnapshots: true});
 
     </script>
-
+    <script src="./script/script.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
 </body>
