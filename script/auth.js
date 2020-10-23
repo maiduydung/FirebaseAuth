@@ -7,7 +7,7 @@ auth.onAuthStateChanged(user =>{
         console.log('auth status\n',user);
 
         //get data
-        db.collection('type1_userpost').get().then(snapshot => {
+        db.collection('type1_userpost').onSnapshot(snapshot => {
             setupUserPost(snapshot.docs);
         });
     }
