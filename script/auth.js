@@ -1,8 +1,11 @@
-
+let userEmail='';
 //listen for auth change
 auth.onAuthStateChanged(user =>{
-    console.log('auth status\n',user);
+
     if(user){
+        userEmail = user.email;
+        console.log('auth status\n',user);
+
         //get data
         db.collection('type1_userpost').get().then(snapshot => {
             setupUserPost(snapshot.docs);
@@ -15,6 +18,21 @@ auth.onAuthStateChanged(user =>{
 });
 
 //post
+const createForm = document.querySelector('#create-form');
+if(createForm){
+    createForm.addEventListener('submit',(e) =>{
+        e.preventDefault();
+        db.collection('type1_userpost').add({
+            content: createForm['content'].value,
+            createdBy: userEmail
+        }).then(() =>{
+            //close and reset
+            const modal = document.querySelector('#modal-create');
+            M.Modal.getInstance(modal).close();
+            createForm.reset();
+        })
+    })
+}
 
 //sign up
 const signupForm = document.querySelector('#signup-form');
