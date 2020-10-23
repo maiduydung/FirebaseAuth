@@ -16,5 +16,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 const print_log = () =>{
-    console.log("11111111");
+    console.log("Post btn hit");
 }

@@ -6,25 +6,25 @@
 
 .descending_btn{
     background-color: #FFC016 !important;
-    border: none;
+    /* border: none;
     color: white;
     margin-left: 60pt;
     padding: 5px 25px; 
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline-block; */
     font-size: 10px;
 }
 
 .like_btn{
     background-color: #DFDFDF !important;
-    border: none;
+    /* border: none;
     color: white;
     margin-right: 35pt;
     padding: 5px 25px; 
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline-block; */
     font-size: 10px;
 }
 
