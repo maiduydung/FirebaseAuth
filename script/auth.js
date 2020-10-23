@@ -1,3 +1,21 @@
+
+//listen for auth change
+auth.onAuthStateChanged(user =>{
+    console.log('auth status\n',user);
+    if(user){
+        //get data
+        db.collection('type1_userpost').get().then(snapshot => {
+            setupUserPost(snapshot.docs);
+        });
+    }
+    else{
+        console.log('user logged out');
+        setupUserPost([]);
+    }
+});
+
+//post
+
 //sign up
 const signupForm = document.querySelector('#signup-form');
 if(signupForm){

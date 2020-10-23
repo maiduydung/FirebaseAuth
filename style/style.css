@@ -6,25 +6,11 @@
 
 .descending_btn{
     background-color: #FFC016 !important;
-    /* border: none;
-    color: white;
-    margin-left: 60pt;
-    padding: 5px 25px; 
-    text-align: center;
-    text-decoration: none;
-    display: inline-block; */
     font-size: 10px;
 }
 
 .like_btn{
     background-color: #DFDFDF !important;
-    /* border: none;
-    color: white;
-    margin-right: 35pt;
-    padding: 5px 25px; 
-    text-align: center;
-    text-decoration: none;
-    display: inline-block; */
     font-size: 10px;
 }
 
@@ -34,7 +20,6 @@
 
 
 .card-content{
-
     overflow: hidden;
 }
 
@@ -80,4 +65,8 @@
 .screen_name{
     color: #FFC016;
     font-size: 30px;
+}
+
+.ul {
+    list-style-type: none;
 }
