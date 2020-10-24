@@ -37,9 +37,34 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+
   var database = firebase.database().ref('Home_Appliances_Control');
+
+    //write data, replacing any existing data at that path.
+    database.set({
+
+        TV:{
+            Off:11,
+        }
+    });
+
+    database.update({
+        test_var:11,
+        Fridge:{
+            is_on:1,
+        },
+    })
+
+    //read data
+    database.on('value', function(snapshot){
+        console.log(snapshot.val());
+    });
+
+
+
 </script>
 
+<script src="./script/script.js"></script>
 <!-- ------------------------------------------------------------------ -->
 </body>
 
