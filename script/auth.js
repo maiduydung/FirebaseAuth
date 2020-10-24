@@ -49,6 +49,13 @@ if(signupForm){
         // register user
         auth.createUserWithEmailAndPassword(email, password).then(cred => {
             console.log(cred);
+            
+            return db.collection('users').doc(cred.user.uid).set({
+                name: signupForm['signup-name'].value,
+            });
+            
+            
+        }).then(() => {
             //after successful registeration, switch to index page
             window.location.href = 'index.html';
         });
