@@ -26,7 +26,7 @@
                         <div class="button">
                             <div class="select">
                                     <div class="dropdown">
-                                            <select name="one" class="dropdown-select">
+                                            <select name="one" class="dropdown-select" id="aircon_modes" onclick="aircon_modes()" >
                                               <option value="1" class="cool">冷房</option>
                                               <option value="2" class="hot">暖房</option>
                                               <option value="3" class="dry">除湿</option>
@@ -61,7 +61,7 @@
                             <div class="button">
                                 <div class="switch">
                                     <label class="switch__label">
-                                            <input type="checkbox" class="switch__input"/>
+                                            <input type="checkbox" class="switch__input" id="fan_switch" onclick="fan_switch()"/>
                                             <span class="switch__content"></span>
                                             <span class="switch__circle"></span>
                                     </label>
@@ -82,7 +82,7 @@
                                 <div class="button">
                                     <div class="switch">
                                         <label class="switch__label">
-                                                <input type="checkbox" class="switch__input"/>
+                                                <input type="checkbox" class="switch__input" id="tv_switch" onclick="tv_switch()"/>
                                                 <span class="switch__content"></span>
                                                 <span class="switch__circle"></span>
                                         </label>
@@ -107,7 +107,7 @@
                                     <div class="button">
                                         <div class="switch">
                                             <label class="switch__label">
-                                                    <input type="checkbox" class="switch__input"/>
+                                                    <input type="checkbox" class="switch__input" id="light_switch" onclick="light_switch()"/>
                                                     <span class="switch__content"></span>
                                                     <span class="switch__circle"></span>
                                             </label>
@@ -117,28 +117,6 @@
                             </div>
                     </div>
             </div>
-            <div class="light2-space">
-                    <div class="light2-bar">
-                            <div class="icon-space">
-                                    <div class="icon-top"><div class="light-icon"><img src="./img/light.png" height="auto" width="50%"></div></div>    
-                                    <div class="icon-bottom"><div class="name">light2</div></div>                   
-                            </div>
-                            <div class="button-space">
-                                    <div class="button-top"></div>
-                                    <div class="button">
-                                        <div class="switch">
-                                            <label class="switch__label">
-                                                    <input type="checkbox" class="switch__input"/>
-                                                    <span class="switch__content"></span>
-                                                    <span class="switch__circle"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="button-bottom"></div>
-                            </div>
-                    </div>
-            </div>
-        </div>     
         
         <div class="bar"></div>
         
