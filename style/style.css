@@ -70,3 +70,12 @@
 .ul {
     list-style-type: none;
 }
+
+/* ------------------------------------- */
+/* Sharing info screen */
+.article{
+    color: #FFC016;
+    font-size: 20px;
+    padding-left: 25px;
+    
+}
