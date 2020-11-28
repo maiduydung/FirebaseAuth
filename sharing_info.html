@@ -27,14 +27,31 @@
     <div class="center-align">
         <img class="responsive-img newsfeed_aircon" src="./img/sharing_info/remote_darken_text.png">
     </div>
-    <span class='article'>記事</span>
+    
+    <div class='article'>記事</div>
 
 
 <!-- carousel    -->
 <!--------------------------------------------------------- -->
     <div class="slick" id="article_carousel">
-        <div><h3>1</h3></div>
-        <div><h3>2</h3></div>
+        <div class="slick_element">
+            <div class="row">
+                <div class="column"><img class="responsive-img" src="./img/sharing_info/fan.png" alt=""></div>
+                <div class="column">
+                    <p class="element_title">家電別省エネ術(仮)</p>
+                    <p class="element_summary">省エネに対する意識はあるがどのような 方法で省エネを行えばよいかわからない こちらの記事ではそんな疑問を解決します</p>
+                </div>
+            </div>
+        </div>
+        <div class="slick_element">
+            <div class="row">
+                <div class="column"><img class="responsive-img" src="./img/sharing_info/sdg7.png" alt=""></div>
+                <div class="column">
+                    <p class="element_title">Lorem Ipsum</p>
+                    <p class="element_summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
         <div><h3>3</h3></div>
         <div><h3>4</h3></div>
         <div><h3>5</h3></div>
@@ -45,7 +62,7 @@
             $('.slick').slick({
                 infinite: true,
                 slidesToShow: 3,
-                slidesToScroll: 1
+                slidesToScroll: 2
             });
         });
     </script>

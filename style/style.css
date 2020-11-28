@@ -71,16 +71,38 @@
     list-style-type: none;
 }
 
-/* ------------------------------------- */
+/* ------------------------------------------------ */
 /* Sharing info screen */
+
 .article{
     color: #FFC016;
     font-size: 20px;
     padding-left: 25px;
-    
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
 #article_carousel{
     padding-left: 25px;
+}
+
+.element_title{
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.element_summary{
+    font-size: 11px;
+
+}
+
+/* the slides */
+.slick-slide {
+    margin: 0 10px;
+}
+
+/* the parent */
+.slick-list {
+    margin: 0 -5px;
 }
