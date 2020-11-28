@@ -98,15 +98,25 @@
 }
 
 /* the slides */
-
 .slick-slide {
     margin: 0 10px;
     box-sizing: border-box;
-    width: 100px;
-    height: 100px;
+    width: 130px;
 }
 
 /* the parent */
 .slick-list {
     margin: 0 -5px;
+}
+
+#sharing_info_br{
+    padding-bottom: 20px;
+}
+
+#article_second_carousel{
+    color: #FFC016;
+    font-size: 20px;
+    padding-left: 25px;
+    padding-top: 0px;
+    padding-bottom: 20px;
 }
