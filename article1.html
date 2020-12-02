@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric</title>
+    <!-- material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- custom css -->
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="./style/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="./style/slick-theme.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<style>
+    body{
+        background-color: #F6F6F6;
+    }
+</style>
+
+<body>
+    <div class="center-align container article_pic_top">
+        <img class="responsive-img newsfeed_aircon" src="./img/sharing_info/fan_resized.png">
+    </div>
+
+    <div class="article_title container">照明の電気代を節約する方法</div>
+    <div class="article_content container">まず前提として、電気を無駄につかってしまった製品を同じ大学生約100名にアンケートした所、照明が75％、エアコン57％無駄遣いしていると回答。
+        そのためこの記事では照明、エアコンの電力削減に関するお得な情報を掲載します。</div>
+        <p id="date"></p>
+
+    <script >
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+    </script>
+    <hr>
+    <br>
+    <div class="article_content container">1．照明の電力削減方法
+        照明の電気代を節約する方法は様々あります。その中で簡単にできることをいくつか紹介します。</div>
+    <div class="article_content container">まず省エネ効果が最も高いものとしてLED照明が挙げられます。白熱電球をLED照明に交換するだけで、約85％の電気代の削減が期待できます。またLED照明には電気代が削減できるだけではなく様々なメリットがあります。1つ目は非常に長寿命であるという点です。一般的な白熱電球の寿命は約1000時間、蛍光ランプが約6000時間から13000時間であるのに対し、LED照明は約40000時間で圧倒的に長く使うことができます。LED照明は長寿命であることからランプ交換の手間が省けるといったメリットもあります。2つ目は熱や紫外線を含まないため、光で物を傷める心配がないという点です。LED照明を使うことで写真などが色あせしにくくなります。また虫が集まりにくくなったり、熱を持たないことからエネルギー効率がよくやけどの心配がないというメリットもあります。</div>
+    <div class="article_content container">他にも少しの工夫で省エネ効果を期待できる方法があります。例えば主電源をオフにするだけでも省エネ効果が期待できます。リモコンで電源をオフにすると待機中に電力を消費するため、主電源をオフにすることで電力の節約になります。また照明器具のカバーを掃除することでも省エネ効果が期待できます。カバーを1年間掃除しなかった場合明るさは約20％減少します。他にも古くなり劣化した照明器具を新しいものに交換することでも省エネにつながります。</div>
+
+
+
+<!-- Slick css -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+<!-- Firebase auth -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBsm0975wuV6elzw9XJY871B_ohDA4Bgyw",
+        authDomain: "socialize-57b8d.firebaseapp.com",
+        databaseURL: "https://socialize-57b8d.firebaseio.com",
+        projectId: "socialize-57b8d",
+        // storageBucket: "socialize-57b8d.appspot.com",
+        // messagingSenderId: "410389265884",
+        appId: "1:410389265884:web:1b01bdf1790d2c1bed6319",
+        measurementId: "G-8GP6JMQMFB"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    // auth and Firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // update firestore settings
+    // this is no longer required
+    // db.settings({ timestampsInSnapshots: true});
+
+    </script>
+    <!-- <script src="./script/auth.js"></script> -->
+    <!-- <script src="./script/script.js"></script> -->
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+</body>
+
+</html>
