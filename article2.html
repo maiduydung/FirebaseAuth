@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric</title>
+    <!-- material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- custom css -->
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="./style/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="./style/slick-theme.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<style>
+    body{
+        background-color: #F6F6F6;
+    }
+</style>
+
+<body>
+    <div class="center-align container article_pic_top">
+        <img class="responsive-img newsfeed_aircon" src="./img/sharing_info/sdg7.png">
+    </div>
+
+    <div class="article_title container">SDGｓとは</div>
+    <div class="article_content container">SDGsとは「Sustainable Development Goals（持続可能な開発目標）」の略称。2000年に採択されたMDGs（ミレニアム開発目標）の達成期限を迎えた2015年に、国連によって採択された、2030年までの15年間で新たに達成すべき国際目標です。掲げられた目標は17。それぞれの目標の下に10個ほど、全部で169の具体的なターゲット目標が示され、さらにその下に詳細な指標が全244に設定される3段階の念入りな構造になっています。しかも、この達成度合いは、年1回の「持続可能な開発に関するハイレベル政治フォーラム」で各国から報告され、ランキングとして発表。全世界からモニタリングされる仕組みからも、目標達成への国連の本気度がうかがえます。</div>
+        <p id="date"></p>
+
+    <script >
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+    </script>
+    <hr>
+    <br>
+    <div class="article_content container">そんな世界が注目している中、私たちが注目したSDGsは、7，エネルギーをみんなに、そしてクリーンに現在のエネルギーは，石油，石炭，天然ガスの化石エネルギーが中心です。ついで原子力，再生可能エネルギーとなっています。化石エネルギーは限りのある資源で，このペースで使い続けると100年後にはほとんど使い果たしてしまうという予測もあります。また，化石エネルギーを作り出すときに二酸化炭素が発生するのも問題です。このまま化石エネルギーの消費量が増え続けると，温暖化や気候変動がますます深刻になるといわれています。</div>
+    <div class="article_content container">そこで未来のエネルギーとして，世界が力を入れているのが再生可能エネルギーです。世界の最終エネルギー消費の約18.1％が再生可能エネルギーで，先進国を中心に積極的に導入されています。</div>
+    <div class="article_content container">そんな難しい問題を解決するのは私たちだけの力だけでは難しいかも知れない。しかし私たちがやれることが沢山あります。
+        それは、日頃から節電を心がけ，エネルギーを上手に使う工夫をすること，それにつきます。
+        そんな節電やエネルギーを節約することを考えたものが私たちのアプリになります。</div>
+
+
+
+<!-- Slick css -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+<!-- Firebase auth -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBsm0975wuV6elzw9XJY871B_ohDA4Bgyw",
+        authDomain: "socialize-57b8d.firebaseapp.com",
+        databaseURL: "https://socialize-57b8d.firebaseio.com",
+        projectId: "socialize-57b8d",
+        // storageBucket: "socialize-57b8d.appspot.com",
+        // messagingSenderId: "410389265884",
+        appId: "1:410389265884:web:1b01bdf1790d2c1bed6319",
+        measurementId: "G-8GP6JMQMFB"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    // auth and Firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // update firestore settings
+    // this is no longer required
+    // db.settings({ timestampsInSnapshots: true});
+
+    </script>
+    <!-- <script src="./script/auth.js"></script> -->
+    <!-- <script src="./script/script.js"></script> -->
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+</body>
+
+</html>
