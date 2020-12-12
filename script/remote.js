@@ -8,7 +8,8 @@ temp.update(
 
 
 function start() {
-  return new Date();
+    temp_start = new Date();
+    return temp_start.toString();
 };
 
 function end(startTime) {
