@@ -1,10 +1,25 @@
 // GET START TIME SAMPLE
 
+var uid, url;
+function getUserID(){
+    auth.onAuthStateChanged(user => {
+        if(user){
+            console.log(user.uid);
+            uid = user.uid;
+        }
+    })
+}
+getUserID();
+
 function get_aircon_kWh(){
     var start;
-    db_remote.ref("Home_Appliances_Control/Air_Con/Fragment").once("value").then((snapshot) =>{
-        start = Date.parse(snapshot.val().start)
+    url = "Energy_Consumption/users/"+uid;
+    db_remote.ref(url).once("value").then((snapshot) =>{
+        start = Date.parse(snapshot.val().air_con);
+        //console.log("start",start);
+
     });
+
 
     var hour;
     var energy;
@@ -15,15 +30,16 @@ function get_aircon_kWh(){
         energy = 850*hour/1000;
         console.log('aircon kwh ', energy);
     }
-    setTimeout(getHoursAndEnergy, 3000);
+    setTimeout(getHoursAndEnergy, 1000);
     return energy;
 }
 
 
 function get_tv_kWh(){
     var start;
-    db_remote.ref("Home_Appliances_Control/TV/Off").once("value").then((snapshot) =>{
-        start = Date.parse(snapshot.val().start)
+    url = "Energy_Consumption/users/"+uid;
+    db_remote.ref(url).once("value").then((snapshot) =>{
+        start = Date.parse(snapshot.val().tv)
     });
 
     var hour;
@@ -35,14 +51,15 @@ function get_tv_kWh(){
         energy = 400*hour/1000;
         console.log('tv kwh ', energy);
     }
-    setTimeout(getHoursAndEnergy, 3000);
+    setTimeout(getHoursAndEnergy, 1000);
     return energy;
 }
 
 function get_fan_kWh(){
     var start;
-    db_remote.ref("Home_Appliances_Control/Cooling_Fan/Fragment").once("value").then((snapshot) =>{
-        start = Date.parse(snapshot.val().start)
+    url = "Energy_Consumption/users/"+uid;
+    db_remote.ref(url).once("value").then((snapshot) =>{
+        start = Date.parse(snapshot.val().fan)
     });
 
     var hour;
@@ -54,9 +71,33 @@ function get_fan_kWh(){
         energy = 100*hour/1000;
         console.log('fan kwh ', energy);
     }
-    setTimeout(getHoursAndEnergy, 3000);
+    setTimeout(getHoursAndEnergy, 1000);
     return energy;
 }
 
-get_aircon_kWh();
-get_tv_kWh();
+function get_light_kWh(){
+    var start;
+    url = "Energy_Consumption/users/"+uid;
+    db_remote.ref(url).once("value").then((snapshot) =>{
+        start = Date.parse(snapshot.val().light)
+    });
+
+    var hour;
+    var energy;
+    function getHoursAndEnergy(){
+        var end = Date.parse(new Date());
+        hour = (end - start)*2.77777777*0.00000001;
+        console.log("light hours ", hour);
+        energy = 20*hour/1000;
+        console.log('light kwh ', energy);
+    }
+    setTimeout(getHoursAndEnergy, 1000);
+    return energy;
+}
+
+
+setTimeout(get_aircon_kWh, 1000);
+setTimeout(get_tv_kWh, 1000);
+setTimeout(get_fan_kWh, 1000);
+setTimeout(get_light_kWh, 1000);
+
