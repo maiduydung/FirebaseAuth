@@ -6,7 +6,6 @@ temp.update(
 );
 
 
-var startTime, endTime;
 
 function start() {
   return new Date();
@@ -57,8 +56,6 @@ function aircon_on(){
             key:0,
         })
         //elapsedTime = end(start);
-
-
         console.log("turned off air conditioner\n");
     }
 };
@@ -81,6 +78,7 @@ function fan_switch(){
     var fan_switch = document.getElementById("fan_switch");
     if(fan_switch.checked == true){
         fan_ref_frag.update({
+            start : start(),
             key:1,
         })
         console.log("turned on fan\n");
@@ -99,6 +97,7 @@ function tv_switch(){
     var tv_switch = document.getElementById("tv_switch");
     if(tv_switch.checked == true){
         tv_ref_frag.update({
+            start : start(),
             key:0,
         })
         console.log("turned on tv\n");
@@ -118,6 +117,7 @@ function light_switch(){
     var light_switch = document.getElementById("light_switch");
     if(light_switch.checked == true){
         light_ref_frag.update({
+            start : start(),
             key:1,
         })
         console.log("turned on light\n");
