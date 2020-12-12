@@ -34,6 +34,19 @@ if(createForm){
     })
 }
 
+function writeUserData(userID, userName){
+
+    temp = db_remote.ref("Energy_Consumption/users/"+userID).set(
+        {
+            user_name: userName,
+            air_con: 1,
+            fan:1,
+            light:1,
+            tv:1
+        }
+    );
+}
+
 //sign up
 const signupForm = document.querySelector('#signup-form');
 if(signupForm){
@@ -57,6 +70,13 @@ if(signupForm){
             
         }).then(() => {
             //after successful registeration, switch to index page
+            auth.onAuthStateChanged(user =>{
+                if(user){
+                    //also create user energy profile
+                    writeUserData(user.uid,user.email);
+                    console.log('created\n');
+                }
+            });
             window.location.href = 'index.html';
         });
     });
