@@ -6,12 +6,49 @@ temp.update(
 );
 
 
+var startTime, endTime;
+
+function start() {
+  return new Date();
+};
+
+function end(startTime) {
+  endTime = new Date();
+  var timeDiff = endTime - startTime; //in ms
+  // strip the ms
+  timeDiff /= 1000; //sec
+  timeDiff /= 60; //min
+  timeDiff /= 60; //hour
+
+  // get seconds 
+  //var seconds = Math.round(timeDiff);
+  console.log(timeDiff + " hours");
+}
+
+var uid;
+function getUserID(){
+    auth.onAuthStateChanged(user => {
+        if(user){
+            console.log(user.uid);
+            uid = user.uid;
+        }
+    })
+}
+getUserID();
+
+// GET START TIME SAMPLE
+// db_remote.ref("Home_Appliances_Control/Air_Con/Fragment").once("value").then((snapshot) =>{
+//     console.log(snapshot.val().start);
+// })
+
+
 function aircon_on(){
     var aircon_ref_frag = db_remote.ref("Home_Appliances_Control/Air_Con/Fragment");
     var aircon_switch = document.getElementById("aircon_switch");   
     if(aircon_switch.checked == true){
         aircon_ref_frag.update({
             key:1,
+            start : start(),
         })
         console.log("turned on air conditioner\n");
     }
@@ -19,6 +56,9 @@ function aircon_on(){
         aircon_ref_frag.update({
             key:0,
         })
+        //elapsedTime = end(start);
+
+
         console.log("turned off air conditioner\n");
     }
 };
