@@ -201,6 +201,7 @@
     padding-top: 18%;
 }
 
+/* button nav bar */
 .bar{
     width:100%;
     height:8%;
@@ -208,6 +209,11 @@
     position: absolute;
     bottom: 0; 
     box-shadow:0 1px 6px #00000029;
+}
+
+ul.bar li {
+    /* creating horizontal list */
+    display:inline;
 }
 
 .switch{
