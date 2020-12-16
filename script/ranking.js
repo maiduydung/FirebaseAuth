@@ -25,7 +25,7 @@ function get_aircon_kWh(){
     var energy;
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
-        hour = (end - start)*2.77777777*0.00000001;
+        hour = (end - start)*2.77777777*0.0000001;
         console.log("aircon hours ", hour);
         energy = 850*hour/1000;
         console.log('aircon kwh ', energy);
@@ -46,7 +46,7 @@ function get_tv_kWh(){
     var energy;
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
-        hour = (end - start)*2.77777777*0.00000001;
+        hour = (end - start)*2.77777777*0.0000001;
         console.log("tv hours ", hour);
         energy = 400*hour/1000;
         console.log('tv kwh ', energy);
@@ -66,7 +66,7 @@ function get_fan_kWh(){
     var energy;
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
-        hour = (end - start)*2.77777777*0.00000001;
+        hour = (end - start)*2.77777777*0.0000001;
         console.log("fan hours ", hour);
         energy = 100*hour/1000;
         console.log('fan kwh ', energy);
@@ -86,7 +86,7 @@ function get_light_kWh(){
     var energy;
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
-        hour = (end - start)*2.77777777*0.00000001;
+        hour = (end - start)*2.77777777*0.0000001;
         console.log("light hours ", hour);
         energy = 20*hour/1000;
         console.log('light kwh ', energy);
