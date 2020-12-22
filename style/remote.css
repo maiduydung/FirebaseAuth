@@ -422,3 +422,14 @@ ul.bar li {
 .dry{
     color: #ffe02e;
 }
+
+
+/* floating btn back to home */
+.b {
+    position:absolute;
+    top:0;
+    right:0;
+    z-index:20;
+    padding:5px;
+    background-color:#eee;
+}
