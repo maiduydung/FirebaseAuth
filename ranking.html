@@ -8,31 +8,53 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./style/remote.css" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-          <!--Let browser know website is optimized for mobile-->
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <style>      
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+        }
+        
+        .navbar a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        .navbar a:hover {
+          background: #f1f1f1;
+          color: black;
+        }
+        
+        .navbar a.active {
+          background-color: #4CAF50;
+          color: white;
+        }
+        
+        .main {
+          padding: 16px;
+          margin-bottom: 30px;
+        }
+        </style>
 </head>
+
 <body>
 
-    
-	<main>
-
-    </main>
-
-<footer class="page-footer">
-    <div class="row" id="frow" style="margin-bottom:0px;">
-        <div class="col s12" style="padding-left:0px!important;padding-right:0px!important;">
-            <ul class="tabs tabs-fixed-width transparent white-text">
-                <li class="tab col s3 white-text"><a href="#test1" class="active yellow-text inactive grey-text"><i class="material-icons">home</i></a></li>
-                <li class="tab col s3"><a href="#test2" class="grey-text"><i class="material-icons">sort</i></a></li>
-                <li class="tab col s3"><a href="#test3" class="grey-text"><i class="material-icons">people</i></a></li>
-                <li class="tab col s3"><a href="#test4" class="grey-text"><i class="material-icons">account_circle</i></a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
+    <div class="navbar">
+        <a href="./remote.html"><i class="material-icons">home</i></a>
+        <a href="./ranking.html"><i class="material-icons">sort</i></a>
+        <a href="./sharing_info.html"><i class="material-icons">people</i></a>
+        <a href="#"><i class="material-icons">person</i></a>
+      </div>
 
 
 </body>
