@@ -12,9 +12,7 @@ function getUserID(){
 }
 getUserID();
 
-
-
-function get_aircon_kWh(){
+function get_aircon_kWh(uid){
     var start;
     url = "Energy_Consumption/users/"+uid;
     db_remote.ref(url).once("value").then((snapshot) =>{
@@ -29,16 +27,16 @@ function get_aircon_kWh(){
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
         hour = (end - start)*2.77777777*0.0000001;
-        console.log("aircon hours ", hour);
+        console.log(uid + " aircon hours ", hour);
         energy = 850*hour/1000;
-        console.log('aircon kwh ', energy);
+        console.log(uid + ' aircon kwh ', energy);
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
 }
 
 
-function get_tv_kWh(){
+function get_tv_kWh(uid){
     var start;
     url = "Energy_Consumption/users/"+uid;
     db_remote.ref(url).once("value").then((snapshot) =>{
@@ -50,15 +48,15 @@ function get_tv_kWh(){
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
         hour = (end - start)*2.77777777*0.0000001;
-        console.log("tv hours ", hour);
+        console.log(uid + " tv hours ", hour);
         energy = 400*hour/1000;
-        console.log('tv kwh ', energy);
+        console.log(uid + ' tv kwh ', energy);
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
 }
 
-function get_fan_kWh(){
+function get_fan_kWh(uid){
     var start;
     url = "Energy_Consumption/users/"+uid;
     db_remote.ref(url).once("value").then((snapshot) =>{
@@ -70,15 +68,15 @@ function get_fan_kWh(){
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
         hour = (end - start)*2.77777777*0.0000001;
-        console.log("fan hours ", hour);
+        console.log(uid + " fan hours ", hour);
         energy = 100*hour/1000;
-        console.log('fan kwh ', energy);
+        console.log(uid + ' fan kwh ', energy);
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
 }
 
-function get_light_kWh(){
+function get_light_kWh(uid){
     var start;
     url = "Energy_Consumption/users/"+uid;
     db_remote.ref(url).once("value").then((snapshot) =>{
@@ -90,9 +88,9 @@ function get_light_kWh(){
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
         hour = (end - start)*2.77777777*0.0000001;
-        console.log("light hours ", hour);
+        console.log(uid + " light hours ", hour);
         energy = 20*hour/1000;
-        console.log('light kwh ', energy);
+        console.log(uid + ' light kwh ', energy);
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
@@ -100,17 +98,24 @@ function get_light_kWh(){
 
 var json;
 var json_str="";
+var user_results = [];
 function iterate_users(){
     firebase.database().ref('Energy_Consumption/users/').once('value', function(snap){
         json = snap.val();
         json_str = JSON.stringify(snap.val());
 
-        for(let key in json){
-            console.log(key, json[key]);
+        for(let uid in json){
+            let temp = 0;
+            temp = temp + get_aircon_kWh(uid);
+            temp = temp + get_fan_kWh(uid);
+            temp = temp + get_light_kWh(uid);
+            temp = temp + get_tv_kWh(uid);
+            user_results.push({
+                key:uid,
+                value: temp
+            });
         }
-
     })
-
 }
 
 
