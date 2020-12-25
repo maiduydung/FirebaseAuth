@@ -98,25 +98,33 @@ function get_light_kWh(){
     return energy;
 }
 
-json_str = "";
+var json;
+var json_str="";
 function iterate_users(){
     firebase.database().ref('Energy_Consumption/users/').once('value', function(snap){
-        json_str = JSON.stringify(snap.val())
-        console.log(json_str);
-        console.log(snap.val());
-        
-    })
+        json = snap.val();
+        json_str = JSON.stringify(snap.val());
 
+        for(let key in json){
+            console.log(key, json[key]);
+        }
+
+    })
 
 }
 
-iterate_users();
+
+setTimeout(function(){
+    iterate_users()
+
+},1000) 
 
 
-setTimeout(get_aircon_kWh, 1000);
-setTimeout(get_tv_kWh, 1000);
-setTimeout(get_fan_kWh, 1000);
-setTimeout(get_light_kWh, 1000);
+
+// setTimeout(get_aircon_kWh, 1000);
+// setTimeout(get_tv_kWh, 1000);
+// setTimeout(get_fan_kWh, 1000);
+// setTimeout(get_light_kWh, 1000);
 
 
 
