@@ -8,8 +8,11 @@ function getUserID(){
             uid = user.uid;
         }
     })
+
 }
 getUserID();
+
+
 
 function get_aircon_kWh(){
     var start;
@@ -95,9 +98,25 @@ function get_light_kWh(){
     return energy;
 }
 
+json_str = "";
+function iterate_users(){
+    firebase.database().ref('Energy_Consumption/users/').once('value', function(snap){
+        json_str = JSON.stringify(snap.val())
+        console.log(json_str);
+        console.log(snap.val());
+        
+    })
+
+
+}
+
+iterate_users();
+
 
 setTimeout(get_aircon_kWh, 1000);
 setTimeout(get_tv_kWh, 1000);
 setTimeout(get_fan_kWh, 1000);
 setTimeout(get_light_kWh, 1000);
+
+
 
