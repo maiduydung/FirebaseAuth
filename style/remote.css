@@ -431,5 +431,5 @@ ul.bar li {
     right:0;
     z-index:20;
     padding:5px;
-    background-color:#eee;
+    background-color:transparent;
 }
