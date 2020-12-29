@@ -12,6 +12,23 @@ function getUserID(){
 }
 getUserID();
 
+
+//desperate times
+var light_energy ={val:0};
+var aircon_energy ={val:0};
+var tv_energy ={val:0};
+var fan_energy ={val:0};
+
+var users = [
+    // uid:"",
+    // light_energy:0,
+    // aircon_energy:0,
+    // tv_energy:0,
+    // fan_energy:0,
+    // total:0
+];
+
+
 function get_aircon_kWh(uid){
     var start;
     url = "Energy_Consumption/users/"+uid;
@@ -30,6 +47,11 @@ function get_aircon_kWh(uid){
         console.log(uid + " aircon hours ", hour);
         energy = 850*hour/1000;
         console.log(uid + ' aircon kwh ', energy);
+        //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
+        if(users.includes(uid) == false){
+            users.push([uid, energy]);
+        }else
+        users.push(energy);
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
@@ -51,6 +73,11 @@ function get_tv_kWh(uid){
         console.log(uid + " tv hours ", hour);
         energy = 400*hour/1000;
         console.log(uid + ' tv kwh ', energy);
+        //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
+        if(users.includes(uid) == false){
+            users.push([uid, energy]);
+        }else
+        users.push(energy);
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
@@ -71,6 +98,11 @@ function get_fan_kWh(uid){
         console.log(uid + " fan hours ", hour);
         energy = 100*hour/1000;
         console.log(uid + ' fan kwh ', energy);
+        //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
+        if(users.includes(uid) == false){
+            users.push([uid, energy]);
+        }else
+        users.push(energy);
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
@@ -91,6 +123,11 @@ function get_light_kWh(uid){
         console.log(uid + " light hours ", hour);
         energy = 20*hour/1000;
         console.log(uid + ' light kwh ', energy);
+        //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
+        if(users.includes(uid) == false){
+            users.push([uid, energy]);
+        }else
+        users.push(energy);
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
@@ -98,7 +135,7 @@ function get_light_kWh(uid){
 
 var json;
 var json_str="";
-var user_results = [];
+
 function iterate_users(){
     firebase.database().ref('Energy_Consumption/users/').once('value', function(snap){
         json = snap.val();
@@ -106,14 +143,11 @@ function iterate_users(){
 
         for(let uid in json){
             let temp = 0;
-            temp = temp + get_aircon_kWh(uid);
-            temp = temp + get_fan_kWh(uid);
-            temp = temp + get_light_kWh(uid);
-            temp = temp + get_tv_kWh(uid);
-            user_results.push({
-                key:uid,
-                value: temp
-            });
+            get_aircon_kWh(uid);
+            get_fan_kWh(uid);
+            get_light_kWh(uid);
+            get_tv_kWh(uid);
+
         }
     })
 }
@@ -123,6 +157,14 @@ setTimeout(function(){
     iterate_users()
 
 },1000) 
+
+for(var i=0; i< users.length;i++){
+    let temp = 0;
+    //console.log(users[i]);
+    for(var j = 0; j<4; j++){
+        console.log(users[i][j])
+    }
+}
 
 
 
