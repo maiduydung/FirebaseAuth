@@ -31,9 +31,11 @@ var users = [
 
 function get_aircon_kWh(uid){
     var start;
+    var username='';
     url = "Energy_Consumption/users/"+uid;
     db_remote.ref(url).once("value").then((snapshot) =>{
         start = Date.parse(snapshot.val().air_con);
+        username = snapshot.val().user_name;
         //console.log("start",start);
 
     });
@@ -50,7 +52,7 @@ function get_aircon_kWh(uid){
         //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
         if(users.length == 0){
             //when users arr is empty
-            users.push([uid, energy]);
+            users.push([uid, energy, username]);
             //console.log('added to empty arr', users);
         }
         
@@ -66,14 +68,9 @@ function get_aircon_kWh(uid){
 
         //if cant found uid, meaning we have a new user
         if(found == false){
-            users.push([uid, energy]);
+            users.push([uid, energy, username]);
             //console.log('added new user', users);
         }
-
-        // if(users.includes(uid) == false){
-        //     users.push([uid, energy]);
-        // }else
-        // users.push(energy);
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
@@ -98,7 +95,7 @@ function get_tv_kWh(uid){
         //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
         if(users.length == 0){
             //when users arr is empty
-            users.push([uid, energy]);
+            users.push([uid, energy, username]);
             //console.log('added to empty arr', users);
         }
         
@@ -114,7 +111,7 @@ function get_tv_kWh(uid){
 
         //if cant found uid, meaning we have a new user
         if(found == false){
-            users.push([uid, energy]);
+            users.push([uid, energy, username]);
             //console.log('added new user', users);
         }
     }
@@ -140,7 +137,7 @@ function get_fan_kWh(uid){
         //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
         if(users.length == 0){
             //when users arr is empty
-            users.push([uid, energy]);
+            users.push([uid, energy, username]);
             //console.log('added to empty arr', users);
         }
         
@@ -156,7 +153,7 @@ function get_fan_kWh(uid){
 
         //if cant found uid, meaning we have a new user
         if(found == false){
-            users.push([uid, energy]);
+            users.push([uid, energy, username]);
             //console.log('added new user', users);
         }
     }
@@ -182,7 +179,7 @@ function get_light_kWh(uid){
         //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
         if(users.length == 0){
             //when users arr is empty
-            users.push([uid, energy]);
+            users.push([uid, energy, username]);
             //console.log('added to empty arr', users);
         }
         
@@ -198,7 +195,7 @@ function get_light_kWh(uid){
 
         //if cant found uid, meaning we have a new user
         if(found == false){
-            users.push([uid, energy]);
+            users.push([uid, energy, username]);
             //console.log('added new user', users);
         }
     }
@@ -241,12 +238,12 @@ function sort_user_ascending(){
                     <div class="col">
                     <img class="circle img-responsive avatar" src="./img/avatar/avatar1.png" alt="">
                     </div>
-                    <div class="col">${user[0]}</div>
+                    <div class="col">${user[2]}</div>
                 </div>
             <div class="row valign-wrapper">
                 <div class="col">
                 <span class="black-text">
-                ${user[1]}
+                ${Math.round(user[1])} kwh
                 </span>
                 </div>
             </div>
