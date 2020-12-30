@@ -227,7 +227,37 @@ function iterate_users(){
 
 function sort_user_ascending(){
     users = users.sort((a, b) => a[1]-b[1]);
-    console.log(users);
+    const user_ranking_list = document.querySelector('.ul_user_ranking');
+    let html = '';
+    users.forEach(user => {
+        console.log(user);        
+    /////////////////////////////////
+    //template string
+        const li = `
+        <li>
+        <div class="col s12 m8 offset-m2 l6 offset-l3 user_post">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col">
+                    <img class="circle img-responsive avatar" src="./img/avatar/avatar1.png" alt="">
+                    </div>
+                    <div class="col">${user[0]}</div>
+                </div>
+            <div class="row valign-wrapper">
+                <div class="col">
+                <span class="black-text">
+                ${user[1]}
+                </span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </li>
+        `;
+        html = html + li
+    /////////////////////////////////
+    });
+    user_ranking_list.innerHTML = html;
 }
 
 setTimeout(function(){
