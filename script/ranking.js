@@ -51,7 +51,7 @@ function get_aircon_kWh(uid){
         if(users.length == 0){
             //when users arr is empty
             users.push([uid, energy]);
-            console.log('added to empty arr', users);
+            //console.log('added to empty arr', users);
         }
         
         var found = false;
@@ -60,14 +60,14 @@ function get_aircon_kWh(uid){
             if(users[i][0].includes(uid) == true){
                 found = true;
                 users[i][1] = users[i][1] + energy;
-                console.log('added to existing user', users);
+                //console.log('added to existing user', users);
             }
         }
 
         //if cant found uid, meaning we have a new user
         if(found == false){
             users.push([uid, energy]);
-            console.log('added new user', users);
+            //console.log('added new user', users);
         }
 
         // if(users.includes(uid) == false){
@@ -99,7 +99,7 @@ function get_tv_kWh(uid){
         if(users.length == 0){
             //when users arr is empty
             users.push([uid, energy]);
-            console.log('added to empty arr', users);
+            //console.log('added to empty arr', users);
         }
         
         var found = false;
@@ -108,14 +108,14 @@ function get_tv_kWh(uid){
             if(users[i][0].includes(uid) == true){
                 found = true;
                 users[i][1] = users[i][1] + energy;
-                console.log('added to existing user', users);
+                //console.log('added to existing user', users);
             }
         }
 
         //if cant found uid, meaning we have a new user
         if(found == false){
             users.push([uid, energy]);
-            console.log('added new user', users);
+            //console.log('added new user', users);
         }
     }
     setTimeout(getHoursAndEnergy, 1000);
@@ -141,7 +141,7 @@ function get_fan_kWh(uid){
         if(users.length == 0){
             //when users arr is empty
             users.push([uid, energy]);
-            console.log('added to empty arr', users);
+            //console.log('added to empty arr', users);
         }
         
         var found = false;
@@ -150,14 +150,14 @@ function get_fan_kWh(uid){
             if(users[i][0].includes(uid) == true){
                 found = true;
                 users[i][1] = users[i][1] + energy;
-                console.log('added to existing user', users);
+                //console.log('added to existing user', users);
             }
         }
 
         //if cant found uid, meaning we have a new user
         if(found == false){
             users.push([uid, energy]);
-            console.log('added new user', users);
+            //console.log('added new user', users);
         }
     }
     setTimeout(getHoursAndEnergy, 1000);
@@ -183,7 +183,7 @@ function get_light_kWh(uid){
         if(users.length == 0){
             //when users arr is empty
             users.push([uid, energy]);
-            console.log('added to empty arr', users);
+            //console.log('added to empty arr', users);
         }
         
         var found = false;
@@ -192,14 +192,14 @@ function get_light_kWh(uid){
             if(users[i][0].includes(uid) == true){
                 found = true;
                 users[i][1] = users[i][1] + energy;
-                console.log('added to existing user', users);
+                //console.log('added to existing user', users);
             }
         }
 
         //if cant found uid, meaning we have a new user
         if(found == false){
             users.push([uid, energy]);
-            console.log('added new user', users);
+            //console.log('added new user', users);
         }
     }
     setTimeout(getHoursAndEnergy, 1000);
@@ -227,15 +227,17 @@ function iterate_users(){
 
 function sort_user_ascending(){
     users = users.sort((a, b) => a[1]-b[1]);
+    console.log(users);
 }
 
 setTimeout(function(){
-    iterate_users(),
-    sort_user_ascending()
-
+    iterate_users()
 },1000) 
 
 
+setTimeout(function(){
+    sort_user_ascending()
+},3000) 
 
 
 
