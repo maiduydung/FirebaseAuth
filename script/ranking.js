@@ -44,14 +44,36 @@ function get_aircon_kWh(uid){
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
         hour = (end - start)*2.77777777*0.0000001;
-        console.log(uid + " aircon hours ", hour);
+        //console.log(uid + " aircon hours ", hour);
         energy = 850*hour/1000;
-        console.log(uid + ' aircon kwh ', energy);
+        //console.log(uid + ' aircon kwh ', energy);
         //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
-        if(users.includes(uid) == false){
+        if(users.length == 0){
+            //when users arr is empty
             users.push([uid, energy]);
-        }else
-        users.push(energy);
+            console.log('added to empty arr', users);
+        }
+        
+        var found = false;
+        for(let i=0; i<users.length;i++){
+            //look for existing uid
+            if(users[i][0].includes(uid) == true){
+                found = true;
+                users[i][1] = users[i][1] + energy;
+                console.log('added to existing user', users);
+            }
+        }
+
+        //if cant found uid, meaning we have a new user
+        if(found == false){
+            users.push([uid, energy]);
+            console.log('added new user', users);
+        }
+
+        // if(users.includes(uid) == false){
+        //     users.push([uid, energy]);
+        // }else
+        // users.push(energy);
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
@@ -70,14 +92,31 @@ function get_tv_kWh(uid){
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
         hour = (end - start)*2.77777777*0.0000001;
-        console.log(uid + " tv hours ", hour);
+        //console.log(uid + " tv hours ", hour);
         energy = 400*hour/1000;
-        console.log(uid + ' tv kwh ', energy);
+        //console.log(uid + ' tv kwh ', energy);
         //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
-        if(users.includes(uid) == false){
+        if(users.length == 0){
+            //when users arr is empty
             users.push([uid, energy]);
-        }else
-        users.push(energy);
+            console.log('added to empty arr', users);
+        }
+        
+        var found = false;
+        for(let i=0; i<users.length;i++){
+            //look for existing uid
+            if(users[i][0].includes(uid) == true){
+                found = true;
+                users[i][1] = users[i][1] + energy;
+                console.log('added to existing user', users);
+            }
+        }
+
+        //if cant found uid, meaning we have a new user
+        if(found == false){
+            users.push([uid, energy]);
+            console.log('added new user', users);
+        }
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
@@ -95,14 +134,31 @@ function get_fan_kWh(uid){
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
         hour = (end - start)*2.77777777*0.0000001;
-        console.log(uid + " fan hours ", hour);
+        //console.log(uid + " fan hours ", hour);
         energy = 100*hour/1000;
-        console.log(uid + ' fan kwh ', energy);
+        //console.log(uid + ' fan kwh ', energy);
         //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
-        if(users.includes(uid) == false){
+        if(users.length == 0){
+            //when users arr is empty
             users.push([uid, energy]);
-        }else
-        users.push(energy);
+            console.log('added to empty arr', users);
+        }
+        
+        var found = false;
+        for(let i=0; i<users.length;i++){
+            //look for existing uid
+            if(users[i][0].includes(uid) == true){
+                found = true;
+                users[i][1] = users[i][1] + energy;
+                console.log('added to existing user', users);
+            }
+        }
+
+        //if cant found uid, meaning we have a new user
+        if(found == false){
+            users.push([uid, energy]);
+            console.log('added new user', users);
+        }
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
@@ -120,14 +176,31 @@ function get_light_kWh(uid){
     function getHoursAndEnergy(){
         var end = Date.parse(new Date());
         hour = (end - start)*2.77777777*0.0000001;
-        console.log(uid + " light hours ", hour);
+        //console.log(uid + " light hours ", hour);
         energy = 20*hour/1000;
-        console.log(uid + ' light kwh ', energy);
+        //console.log(uid + ' light kwh ', energy);
         //CRITICAL: ADDING ENERGY CONSUME OF EACH USER TO AN ARR
-        if(users.includes(uid) == false){
+        if(users.length == 0){
+            //when users arr is empty
             users.push([uid, energy]);
-        }else
-        users.push(energy);
+            console.log('added to empty arr', users);
+        }
+        
+        var found = false;
+        for(let i=0; i<users.length;i++){
+            //look for existing uid
+            if(users[i][0].includes(uid) == true){
+                found = true;
+                users[i][1] = users[i][1] + energy;
+                console.log('added to existing user', users);
+            }
+        }
+
+        //if cant found uid, meaning we have a new user
+        if(found == false){
+            users.push([uid, energy]);
+            console.log('added new user', users);
+        }
     }
     setTimeout(getHoursAndEnergy, 1000);
     return energy;
@@ -152,19 +225,17 @@ function iterate_users(){
     })
 }
 
+function sort_user_ascending(){
+    users = users.sort((a, b) => a[1]-b[1]);
+}
 
 setTimeout(function(){
-    iterate_users()
+    iterate_users(),
+    sort_user_ascending()
 
 },1000) 
 
-for(var i=0; i< users.length;i++){
-    let temp = 0;
-    //console.log(users[i]);
-    for(var j = 0; j<4; j++){
-        console.log(users[i][j])
-    }
-}
+
 
 
 
