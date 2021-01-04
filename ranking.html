@@ -17,9 +17,25 @@
         .ul {
             list-style-type: none;
         }
+
+        /* floating btn back to home */
+        .b {
+            position:absolute;
+            top:0;
+            right:0;
+            z-index:20;
+            padding:5px;
+            background-color:transparent;
+        }
+        /* floating back btn color */
+        i.icon-yellow {
+            color: #FFC016;
+        }
     </style>
 </head>
 <body>
+    <!-- X BTN BACK TO HOME SCREEN -->
+    <div class="b"><a href="./remote.html"><i class="material-icons icon-yellow">close</i></a></div>
     <div class="title">
         <div class="bg"></div>
         <div class="date" id="current_date">date</div><div class="ranking-name">削減エネルギー週間ランキング</div>
