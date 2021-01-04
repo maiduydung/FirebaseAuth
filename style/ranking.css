@@ -1,0 +1,179 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height:1600px;
+}
+
+.title{
+    width: 100%;
+    height:170px;
+    background: #000;
+    position: relative;
+    z-index: 2;
+}
+
+.bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../img/ranking2.png");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+p{
+    padding:8px; 
+    font-size: 12px;
+}
+
+.date{
+    text-align: center;
+    color:white;
+    font-size: 19px;
+    font-weight:600;
+    padding:60px 0 0 0 ;
+    opacity: 1.0; 
+
+}
+
+.ranking-name{
+    text-align: center;
+    color:white;
+    font-size: 19px;
+    font-weight:600;
+    padding:3px;
+    opacity: 1.0;
+}
+
+.button{
+    height:85px;
+    width:100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+
+.week{
+    flex: 0 0 50%;
+    background-color: rgb(250, 250, 250);
+}
+
+.week-button{
+    height:32px;
+    width:120px;
+    background-color: #FFC016;
+    border-radius: 4px 4px 4px 4px;
+    color:rgb(0, 0, 0);
+    text-align: center;
+    margin: 30px auto 30px 50px;
+}
+
+.month{
+    flex: 0 0 50%;
+    background-color: rgb(250, 250, 250);
+}
+
+
+.month-button{
+    height:32px;
+    width:120px;
+    background-color: rgb(196, 196, 196);
+    border-radius: 4px 4px 4px 4px;
+    color:rgb(0, 0, 0);
+    text-align: center;
+    margin: 30px 50px 30px auto;
+}
+
+.hr{
+    border-width: 1px 0 0 0;
+	border-style: solid;
+    border-color: #dddddd;
+    margin: auto;
+    width: 97%;
+    text-align: center;
+}
+
+.change{
+    width:100%;
+    height: 25px;
+    margin-top: 30px;
+}
+
+.rankbox{
+     background-color: rgb(255, 255, 255);
+     height:90px;
+     width:100%;
+     margin-top: 13px;
+     border-radius: 8px 0 0 8px;
+     display: flex;
+     box-shadow: 1px 1px 1px 1px rgba(53, 53, 53, 0.144);
+}
+
+.box1-1{
+    background-color: #F1E42E;
+    flex: 0 0 15%;
+    border-radius: 8px 0 0 8px;
+}
+
+.box1-2{
+    background-color: #D3D3D3;
+    flex: 0 0 15%;
+    border-radius: 8px 0 0 8px;
+}
+
+.box1-3{
+    background-color: #B77D19;
+    flex: 0 0 15%;
+    border-radius: 8px 0 0 8px;
+}
+
+.box1{
+    background-color: #FFC016;
+    flex: 0 0 15%;
+    border-radius: 8px 0 0 8px;
+}
+
+.rank-number{
+    font-size: 23px;
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding:27px 0;
+}
+
+.box2{
+    background-color: rgb(255, 255, 255);
+    flex: 0 0 25%;
+}
+
+.circle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgb(187, 187, 187);
+    margin:15px 0 15px 14px;
+}
+
+
+.box3{
+    background-color: rgb(255, 255, 255);
+    flex: 0 0 35%;
+}
+
+.name{
+    color: rgb(0, 0, 0);
+    padding:36px 0;
+    font-size: 15px;
+}
+
+.box4{
+    background-color: rgb(255, 255, 255);
+    flex: 0 0 25%;
+    border-radius:0 8px 8px 0;
+}

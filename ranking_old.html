@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Electric</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style/remote.css" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <style>      
+        .navbar {
+          overflow: hidden;
+          background-color: transparent;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+        }
+        
+        .navbar a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        .navbar a:hover {
+          background: #f1f1f1;
+          color: black;
+        }
+        
+        .navbar a.active {
+          background-color: #4CAF50;
+          color: white;
+        }
+        
+        .main {
+          padding: 16px;
+          margin-bottom: 30px;
+        }
+        .material-icons{
+            color: gray;
+        }
+
+        .ul {
+          list-style-type: none;
+        }
+        </style>
+</head>
+
+<body>
+
+  <main>
+    <!-- <div class="container">
+      <div class="col s12 m8 offset-m2 l6 offset-l3 user_post">
+        <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row">      
+              <span>ddddddddddddd</span>
+            </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container">
+      <div class="ul ul_user_ranking">
+      </div>
+    </div>
+  </main>
+
+    <div class="navbar">
+        <table width="100%">
+            <tr>
+            <td width="(100/4)%"><a href="./remote.html"><i class="material-icons">home</i></a></td>
+            <td width="(100/4)%"><a href="./ranking.html"><i class="material-icons">sort</i></a></td>
+            <td width="(100/4)%"><a href="./sharing_info.html"><i class="material-icons">people</i></a></td>
+            <td width="(100/4)%"><a href="#"><i class=" material-icons">person</i></a></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+</body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+<!-- Firebase auth -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBsm0975wuV6elzw9XJY871B_ohDA4Bgyw",
+        authDomain: "socialize-57b8d.firebaseapp.com",
+        databaseURL: "https://socialize-57b8d.firebaseio.com",
+        projectId: "socialize-57b8d",
+        // storageBucket: "socialize-57b8d.appspot.com",
+        // messagingSenderId: "410389265884",
+        appId: "1:410389265884:web:1b01bdf1790d2c1bed6319",
+        measurementId: "G-8GP6JMQMFB"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    // auth and Firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    //remote screen
+    var db_remote = firebase.database();
+
+
+    // update firestore settings
+    // this is no longer required
+    // db.settings({ timestampsInSnapshots: true});
+</script>
+
+    <script src="./script/auth.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/remote.js"></script>
+    <script src="./script/ranking.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+
+</html>
