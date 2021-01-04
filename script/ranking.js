@@ -226,32 +226,51 @@ function sort_user_ascending(){
     users = users.sort((a, b) => a[1]-b[1]);
     const user_ranking_list = document.querySelector('.ul_user_ranking');
     let html = '';
+    var cnt = 0;   
     users.forEach(user => {
-        console.log(user);        
+        console.log(user);
+        cnt = cnt +1;        
     /////////////////////////////////
     //template string
-        const li = `
-        <li>
-        <div class="col s12 m8 offset-m2 l6 offset-l3 user_post">
-            <div class="card-panel grey lighten-5 z-depth-1">
-                <div class="row valign-wrapper">
-                    <div class="col">
-                    <img class="circle img-responsive avatar" src="./img/avatar/avatar1.png" alt="">
+        // const li = `
+        // <li>
+        // <div class="col s12 m8 offset-m2 l6 offset-l3 user_post">
+        //     <div class="card-panel grey lighten-5 z-depth-1">
+        //         <div class="row valign-wrapper">
+        //             <div class="col">
+        //             <img class="circle img-responsive avatar" src="./img/avatar/avatar1.png" alt="">
+        //             </div>
+        //             <div class="col">${user[2].split('@')[0]}</div>
+        //         </div>
+        //     <div class="row valign-wrapper">
+        //         <div class="col">
+        //         <span class="black-text">
+        //         ${Math.round(user[1])} kwh
+        //         </span>
+        //         </div>
+        //     </div>
+        //     </div>
+        // </div>
+        // </li>
+        // `;
+        const html_str = `
+            <li>
+                <div class="rankbox">
+                    <div class="box1">
+                        <div class="rank-number">${cnt}</div>
                     </div>
-                    <div class="col">${user[2].split('@')[0]}</div>
+                    <div class="box2">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="box3">
+                        <div class="name">${user[2].split('@')[0]}</div>
+                    </div>
+                    <div class="box4">
+                        <div class="name">${Math.round(user[1])} kwh</div>
                 </div>
-            <div class="row valign-wrapper">
-                <div class="col">
-                <span class="black-text">
-                ${Math.round(user[1])} kwh
-                </span>
-                </div>
-            </div>
-            </div>
-        </div>
-        </li>
-        `;
-        html = html + li
+            </li>
+            `;
+        html = html + html_str
     /////////////////////////////////
     });
     user_ranking_list.innerHTML = html;

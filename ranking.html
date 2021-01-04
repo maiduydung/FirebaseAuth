@@ -12,6 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <style>
+        .ul {
+            list-style-type: none;
+        }
+    </style>
 </head>
 <body>
     <div class="title">
@@ -43,147 +49,64 @@
         </div>
     </div> -->
     <!-- <div class="change"><hr class="hr"></div> -->
+
     <div class="container">
-            <div class="rankbox">
-                <div class="box1">
-                    <div class="rank-number">1</div>
-                </div>
-                <div class="box2">
-                    <div class="circle"></div>
-                </div>
-                <div class="box3">
-                    <div class="name">name</div>
-                </div>
-                <div class="box4">
-                    <div class="name">19200kwh</div>
-                </div>
+        <div class="ul ul_user_ranking">
+              
         </div>
-        <div class="rankbox">
-                <div class="box1-1">
-                    <div class="rank-number">2</div>
-                </div>
-                <div class="box2">
-                    <div class="circle"></div>
-                </div>
-                <div class="box3">
-                    <div class="name">name</div>
-                </div>
-                <div class="box4">
-                    <div class="name">19200kwh</div>
-                </div>
-        </div>
-        <div class="rankbox">
-                <div class="box1-2">
-                    <div class="rank-number">3</div>
-                </div>
-                <div class="box2">
-                    <div class="circle"></div>
-                </div>
-                <div class="box3">
-                    <div class="name">name</div>
-                </div>
-                <div class="box4">
-                    <div class="name">19200kwh</div>
-                </div>
-        </div>
-        <div class="rankbox">
-                <div class="box1-3">
-                    <div class="rank-number">4</div>
-                </div>
-                <div class="box2">
-                    <div class="circle"></div>
-                </div>
-                <div class="box3">
-                    <div class="name">name</div>
-                </div>
-                <div class="box4">
-                    <div class="name">19200kwh</div>
-                </div>
-        </div>
-        <div class="rankbox">
-                <div class="box1">
-                    <div class="rank-number">5</div>
-                </div>
-                <div class="box2">
-                    <div class="circle"></div>
-                </div>
-                <div class="box3">
-                    <div class="name">name</div>
-                </div>
-                <div class="box4">
-                    <div class="name">19200kwh</div>
-                </div>
-        </div>
-        <div class="rankbox">
-                <div class="box1">
-                    <div class="rank-number">6</div>
-                </div>
-                <div class="box2">
-                    <div class="circle"></div>
-                </div>
-                <div class="box3">
-                    <div class="name">name</div>
-                </div>
-                <div class="box4">
-                    <div class="name">19200kwh</div>
-                </div>
-        </div>
-        <div class="rankbox">
-                <div class="box1">
-                    <div class="rank-number">7</div>
-                </div>
-                <div class="box2">
-                    <div class="circle"></div>
-                </div>
-                <div class="box3">
-                    <div class="name">name</div>
-                </div>
-                <div class="box4">
-                    <div class="name">19200kwh</div>
-                </div>
-        </div>
-        <div class="rankbox">
-                <div class="box1">
-                    <div class="rank-number">8</div>
-                </div>
-                <div class="box2">
-                    <div class="circle"></div>
-                </div>
-                <div class="box3">
-                    <div class="name">name</div>
-                </div>
-                <div class="box4">
-                    <div class="name">19200kwh</div>
-                </div>
-        </div>
-        <div class="rankbox">
-                <div class="box1">
-                    <div class="rank-number">9</div>
-                </div>
-                <div class="box2">
-                    <div class="circle"></div>
-                </div>
-                <div class="box3">
-                    <div class="name">name</div>
-                </div>
-                <div class="box4">
-                    <div class="name">19200kwh</div>
-                </div>
-        </div>
-        <div class="rankbox">
-                <div class="box1">
-                    <div class="rank-number">10</div>
-                </div>
-                <div class="box2">
-                    <div class="circle"></div>
-                </div>
-                <div class="box3">
-                    <div class="name">name</div>
-                </div>
-                <div class="box4">
-                    <div class="name">19200kwh</div>
-                </div>
-        </div>  
     </div>
+
 </body>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+<!-- Firebase auth -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBsm0975wuV6elzw9XJY871B_ohDA4Bgyw",
+        authDomain: "socialize-57b8d.firebaseapp.com",
+        databaseURL: "https://socialize-57b8d.firebaseio.com",
+        projectId: "socialize-57b8d",
+        // storageBucket: "socialize-57b8d.appspot.com",
+        // messagingSenderId: "410389265884",
+        appId: "1:410389265884:web:1b01bdf1790d2c1bed6319",
+        measurementId: "G-8GP6JMQMFB"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    // auth and Firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    //remote screen
+    var db_remote = firebase.database();
+
+
+    // update firestore settings
+    // this is no longer required
+    // db.settings({ timestampsInSnapshots: true});
+</script>
+
+    <script src="./script/auth.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/remote.js"></script>
+    <script src="./script/ranking.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 </html>
