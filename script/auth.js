@@ -77,7 +77,7 @@ if(signupForm){
                     console.log('created\n');
                 }
             });
-            window.location.href = 'index.html';
+            window.location.href = 'newsfeed.html';
         });
     });
 }
@@ -87,7 +87,7 @@ if(signupForm){
 function userLogOut(){
     auth.signOut().then(() =>{
         console.log('user signed out\n');
-        window.location.href = 'fresh.html';
+        window.location.href = 'index.html';
     
     })
 };
@@ -103,7 +103,7 @@ if(loginForm){
         //logging in
         auth.signInWithEmailAndPassword(email, password).then(cred =>{
             console.log(cred);
-            window.location.href = 'index.html';
+            window.location.href = 'newsfeed.html';
         });
     })
 }
