@@ -19,7 +19,7 @@ const setupUserPost = (data) =>{
                     <div class="col">
                       <img class="circle img-responsive avatar" src="./img/avatar/avatar1.png" alt="">
                     </div>
-                    <div class="col">${userpost.createdBy}</div>
+                    <div class="col">${userpost.createdBy.split('@')[0]}</div>
                   </div>
               <div class="row valign-wrapper">
                 <div class="col">
