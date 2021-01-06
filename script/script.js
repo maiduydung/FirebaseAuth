@@ -2,9 +2,10 @@
 //ul_user_post class declared in the newsfeed screen
 const type1_userpost_list = document.querySelector('.ul_user_post');
 const setupUserPost = (data) =>{
+  console.log(data);
   if(data.length){
     let html = '';
-    data.forEach(doc =>{
+    data.slice().reverse().forEach(doc =>{
       const userpost = doc.data();
       //console.log(doc);
       //console.log(userpost);
