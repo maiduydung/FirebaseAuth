@@ -57,9 +57,27 @@
         .material-icons{
             color: gray;
         }
+
+
+        /* floating btn back to home */
+        .b {
+            position:absolute;
+            top:0;
+            right:0;
+            z-index:20;
+            padding:5px;
+            background-color:transparent;
+        }
+        /* floating back btn color */
+        i.icon-yellow {
+            color: #FFC016;
+        }
 </style>
 
 <body>
+    
+    <!-- X BTN BACK TO HOME SCREEN -->
+    <div class="b"><a href="./remote.html"><i class="material-icons icon-yellow">close</i></a></div>
     <div class="center-align">
         <img class="responsive-img newsfeed_aircon" src="./img/sharing_info/remote_darken_text.png">
     </div>
@@ -110,27 +128,39 @@
     </div>
 
     <!-- SECOND CAROUSEL -->
-    <hr id="sharing_info_br">
+    <br>
+    <hr>
+    <!-- <hr id="sharing_info_br"> -->
+
+    <style>
+        
+    </style>
     <div id="article_second_carousel">チャット</div>
 
-    <div class="slick" id="article_carousel">
-        <div class="slick_element">
-            <div class="row">
-                <!-- remember to resize pics to 668*528 -->
-                <div class="column"><img class="responsive-img" src="./img/sharing_info/air_con_darken_text_rounded_resized.png" alt=""></div>
+    <div class="container" id="carousel_to_index">
+        <div class="slick" id="article_carousel">
+            <div class="slick_element">
+                <div class="row">
+                    <!-- remember to resize pics to 668*528 -->
+                    <div class="column"><a href="./index.html"><img class="responsive-img" src="./img/sharing_info/air_con_darken_text_rounded_resized.png" alt=""></a></div>
+                </div>
+            </div>
+            <div class="slick_element">
+                <div class="row">
+                    <div class="column"><a href="./index.html"><img class="responsive-img" src="./img/sharing_info/sdg7_darken.png" alt=""></a></div>
+                </div>
+            </div>
+            <div class="slick_element">
+                <div class="row">
+                    <div class="column"><a href="./index.html"><img class="responsive-img" src="./img/sharing_info/fan_resized_rounded_darken.png" alt=""></a></div>
+                </div>
+            </div>
+            <div class="slick_element">
+                <div class="row">
+                    <div class="column"><a href="./index.html"><img class="responsive-img" src="./img/sharing_info/sdg7_darken_resized.png" alt=""></a></div>
+                </div>
             </div>
         </div>
-        <div class="slick_element">
-            <div class="row">
-                <div class="column"><img class="responsive-img" src="./img/sharing_info/sdg7_darken.png" alt=""></div>
-            </div>
-        </div>
-        <div class="slick_element">
-            <div class="row">
-                <div class="column"><img class="responsive-img" src="./img/sharing_info/fan_resized.png" alt=""></div>
-            </div>
-        </div>
-        <div><h3>4</h3></div>
     </div>
     
     <script>
@@ -144,18 +174,6 @@
         });
     </script>
 <!-- ------------------------------------------------------- -->
-
-<div class="navbar">
-    <table width="100%">
-        <tr>
-        <td width="(100/4)%"><a href="./remote.html"><i class="material-icons">home</i></a></td>
-        <td width="(100/4)%"><a href="./ranking.html"><i class="material-icons">sort</i></a></td>
-        <td width="(100/4)%"><a href="./sharing_info.html"><i class="material-icons">people</i></a></td>
-        <td width="(100/4)%"><a href="#"><i class=" material-icons">person</i></a></td>
-        </tr>
-    </table>
-</div>
-
 
 
 <!-- Slick css -->
